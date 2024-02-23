@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game/Instructions</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+    body {
+      background-image: linear-gradient(to right, #e2e2e2e2, lightblue);
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .score {
+      border: 10px solid white;
+      border-radius: 10px;
+      box-shadow: 4px 4px 15px 5px #88AB8E;
+      padding: 10px;
+      position: absolute;
+      bottom: 100px;
+      right: 0;
+      margin-right: 30px;
+      font-family: Montserrat;
+      cursor: not-allowed;
+    }
+    .cont {
+      position: relative;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4285f4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    .instruction{
+      position: absolute;
+      top: 10px;
+      left: 0;
+      margin-left: 20px;
+      font-family: Montserrat;
+      border: 2px solid black;
+      padding: 5px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .ins{
+      font-family: Montserrat;
+      position: absolute;
+      top: 75px;
+      font-size:15px;
+      left: 0;
+      display: none;
+    }
+
+    .btn {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    button:hover {
+      background-color: #2c5aa0;
+    }
+    img{
+      cursor: pointer;
+    }
+    @media (max-width:420px)
+    {
+      .cont{
+        position:absolute;
+        top:0;
+      }
+      .score{
+        bottom: 0;
+        margin-bottom: 20px;
+      }
+      h1{
+        margin-top: 30px;
+      }
+      .instruction{
+        display: none;
+      }
+      .ins{
+        display: block;
+        top:30%;
+      }
+      .btn{
+        display:block;
+    
+      }
+      #mul{
+        margin-top: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body onload="disp()">
+  <div class="cont">
+    <h1>Select any game mode</h1>
+    <div class="btn">
+      <button id="ad" onclick="window.location.href='./add.html'">Addition</button>
+      <button id="sub" onclick="window.location.href='./add.html'">Subtraction</button>
+      <button id="di" onclick="window.location.href='./add.html'">Division</button>
+      <button id="mul" onclick="window.location.href='./add.html'">Multiplication</button>
+    </div>
+  </div>
+  <div class="score">
+  </div>
+  <div class="instruction">
+    <p>This is how to play the game <img id="inst" src="arrow.png" height="10px"> </p>
+  </div>
+  <div class="ins">
+    <ul>
+     <li> <b>Choose Operation</b>: Click an operation (+, -, *, /) to begin.</li>
+
+      <li><b>Solve Equation</b>: Enter your answer in the input field.</li>
+
+      <li> <b>Submit</b>: Click "Submit" to check your answer.</li>
+
+      <li><b>Score</b>: Earn points for correct answers.</li>
+
+      <li><b>Feedback</b>: "Correct!" or "Wrong!" messages will appear.</li>
+
+      <li><b>Repeat</b>: Keep solving until you're done.</li>
+
+     <li> <b>View Score</b>: Your score is displayed in the score box</li>
+
+      <li><b>Help</b>: Refer the instructions for any help</li>
+
+      <li><b>End Game</b>: Click "End Game" to exit.</li>
+
+      <li><b>Enjoy & Learn</b>: Have fun while improving your math skills!</li>
+    </ul>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    var score = sessionStorage.getItem("sco");
+    var choice;
+    $("button").click(function () {
+      choice = this.id;
+      sessionStorage.setItem("choice", choice);
+    });
+
+  </script>
+</body>
+
+</html>
