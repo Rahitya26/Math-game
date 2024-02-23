@@ -17,9 +17,6 @@ $(".strt").click(function() {
     case "mul": game("*");
       $(".oprt").text("*");
       break;
-    case "di": game("/");
-      $(".oprt").text("/");
-      break;
   }
 });
 
