@@ -8,40 +8,55 @@
   <title>Game/Instructions</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
-    body {
-      background-image: linear-gradient(to right, #e2e2e2e2, lightblue);
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
+    *{
+      font-family: Montserrat;
+    }
+    html{
+      height: 100%;
+    }
+    body{
+      background-image: url(mainmaths.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
     }
-
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-
-    .score {
-      border: 10px solid white;
-      border-radius: 10px;
-      box-shadow: 4px 4px 15px 5px #88AB8E;
-      padding: 10px;
-      position: absolute;
-      bottom: 100px;
-      right: 0;
-      margin-right: 30px;
-      font-family: Montserrat;
-      cursor: not-allowed;
-    }
-    .cont {
+    .cont{
       position: relative;
+      height: 75%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
     }
-
-    button {
+    .opt{
+      height: 100%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    h2{
+      text-shadow: 2px 2px 10px #B50728,2px 2px 15px #B50728,2px 2px 20px #B50728,2px 2px 25px #B50728;
+      color: white;
+      font-size: 30px;
+    }
+    li{
+      color: white;
+      font-weight: bold;
+      list-style: none;
+      opacity: 1.0;
+    }
+    button{
+      font-weight: bold;
+      width: 200px;
       padding: 10px 20px;
       font-size: 16px;
       background-color: #4285f4;
@@ -51,108 +66,119 @@
       cursor: pointer;
       transition: background-color 0.3s ease-in-out;
     }
-    .instruction{
-      position: absolute;
-      top: 10px;
-      left: 0;
-      margin-left: 20px;
-      font-family: Montserrat;
-      border: 2px solid black;
-      padding: 5px;
-      font-weight: bold;
-      font-size: 20px;
-    }
-    .ins{
-      font-family: Montserrat;
-      position: absolute;
-      top: 75px;
-      font-size:15px;
-      left: 0;
-      display: none;
-    }
-
-    .btn {
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-
     button:hover {
+      transition-duration: 0.5s;
       background-color: #2c5aa0;
+      box-shadow: 4px 2px 20px 10px cyan;
     }
-    img{
-      cursor: pointer;
+    .bg{
+      position: absolute;
+      z-index: -1;
+      opacity: 0.3;
+      height: 100%;
+      width: 100%;
+      background-color: black;
     }
-    @media (max-width:420px)
-    {
-      .cont{
-        position:absolute;
-        top:0;
+    .score {
+      color: white;
+      bottom: 0;
+      margin-bottom: 20px;
+      border: 10px solid white;
+      border-radius: 10px;
+      box-shadow: 4px 4px 15px 5px #88AB8E;
+      padding: 10px;
+      position: absolute;
+      font-size: 20px;
+      font-family: Montserrat;
+    }
+    .score:hover{
+      transition-duration: 0.5s;
+      box-shadow: 3px 5px 10px 3px white;
+    }
+    
+    .ins_cont{
+      text-align: center;
+      padding:20px 20px 20px 20px;
+      height: 100%;
+      position: relative;
+      left: 200px;
+    }
+    .ins_cont:hover .bg{
+      transition-duration: 0.3s;
+      opacity: 1.0;
+      box-shadow:10px 10px 30px 10px #202538;
+    }
+    @media screen and (max-width: 420px) {
+      .cont {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      li{
+        margin-bottom:5px ;
+      }
+      .opt,
+      .ins_cont {
+        padding-right: 10px;
+        width: 100%;
+        left: 0;
+      }
+      li{
+        font-size:13px;
       }
       .score{
-        bottom: 0;
-        margin-bottom: 20px;
+        font-size:13px;
       }
-      h1{
-        margin-top: 30px;
+      button{
+        padding:8px;
       }
-      .instruction{
-        display: none;
+      .ins_cont {
+        padding: 0;
       }
-      .ins{
-        display: block;
-        top:30%;
-      }
-      .btn{
-        display:block;
-    
-      }
-      #mul{
-        margin-top: 15px;
+      .ins_cont br{
+        display:none;
       }
     }
-  </style>
-</head>
 
-<body onload="disp()">
-  <div class="cont">
-    <h1>Select any game mode</h1>
-    <div class="btn">
-      <button id="ad" onclick="window.location.href='./add.html'">Addition</button>
-      <button id="sub" onclick="window.location.href='./add.html'">Subtraction</button>
-      <button id="mul" onclick="window.location.href='./add.html'">Multiplication</button>
+</style>
+  <body onload="disp()">
+    <div class="cont">
+      <div class="opt">
+        <h2>Select any option</h2>
+        <button id="ad" onclick="window.location.href='./add.html'">Addition</button>
+        <button id="sub" onclick="window.location.href='./add.html'">Subtraction</button>
+        <button id="mul" onclick="window.location.href='./add.html'">Multiplication</button>
+      </div>
+      <div class="ins_cont">
+        <div class="bg">
+        </div>
+        <h2>How to play!</h2>
+        <ul>
+         <li> <b>Choose Operation</b>: Click an operation (+, -, *, /) to begin.</li><br>
 
+          <li><b>Solve Equation</b>: Enter your answer in the input field.</li><br>
+
+          <li> <b>Submit</b>: Click "Submit" to check your answer.</li><br>
+
+          <li><b>Score</b>: Earn points for correct answers.</li><br>
+
+          <li><b>Feedback</b>: "Correct!" or "Wrong!" messages will appear.</li><br>
+
+          <li><b>Repeat</b>: Keep solving until you're done.</li><br>
+
+         <li> <b>View Score</b>: Your score is displayed in the score box</li><br>
+
+          <li><b>Help</b>: Refer the instructions for any help</li><br>
+
+          <li><b>End Game</b>: Click "End Game" to exit.</li><br>
+
+          <li><b>Enjoy & Learn</b>: Have fun while improving your math skills!</li><br>
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="score">
-  </div>
-  <div class="instruction">
-    <p>This is how to play the game <img id="inst" src="arrow.png" height="10px"> </p>
-  </div>
-  <div class="ins">
-    <ul>
-     <li> <b>Choose Operation</b>: Click an operation (+, -, *) to begin.</li>
-
-      <li><b>Solve Equation</b>: Enter your answer in the input field.</li>
-
-      <li> <b>Submit</b>: Click "Submit" to check your answer.</li>
-
-      <li><b>Score</b>: Earn points for correct answers.</li>
-
-      <li><b>Feedback</b>: "Correct!" or "Wrong!" messages will appear.</li>
-
-      <li><b>Repeat</b>: Keep solving until you're done.</li>
-
-     <li> <b>View Score</b>: Your score is displayed in the score box</li>
-
-      <li><b>Help</b>: Refer the instructions for any help</li>
-
-      <li><b>End Game</b>: Click "End Game" to exit.</li>
-
-      <li><b>Enjoy & Learn</b>: Have fun while improving your math skills!</li>
-    </ul>
-  </div>
+    <div class="score">
+      Your score is displayed here!
+    </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="script.js"></script>
   <script>
