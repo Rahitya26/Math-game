@@ -28,6 +28,7 @@
     }
     .cont{
       position: relative;
+      width: 100%;
       height: 75%;
       display: flex;
       justify-content: center;
@@ -49,10 +50,14 @@
       font-size: 30px;
     }
     li{
-      color: white;
-      font-weight: bold;
+      color: antiquewhite;
       list-style: none;
       opacity: 1.0;
+    }
+    li b{
+      color: white;
+      font-size: 20px;
+      font-weight:bolder;
     }
     button{
       font-weight: bold;
@@ -97,11 +102,12 @@
     }
     
     .ins_cont{
-      text-align: center;
-      padding:20px 20px 20px 20px;
+      text-align: left;
       height: 100%;
-      position: relative;
-      left: 200px;
+      position:relative;
+    }
+    .ins_cont h2{
+      text-align:center;
     }
     .ins_cont:hover .bg{
       transition-duration: 0.3s;
@@ -124,7 +130,12 @@
         left: 0;
       }
       li{
+        font-size:10px;
+        font-weight:100;     
+      }
+      li b{
         font-size:13px;
+        font-weight:bold;
       }
       .score{
         font-size:13px;
@@ -154,7 +165,7 @@
         </div>
         <h2>How to play!</h2>
         <ul>
-         <li> <b>Choose Operation</b>: Click an operation (+, -, *, /) to begin.</li><br>
+         <li> <b>Choose Operation</b>: Click an operation (+, -, *) to begin.</li><br>
 
           <li><b>Solve Equation</b>: Enter your answer in the input field.</li><br>
 
@@ -163,8 +174,6 @@
           <li><b>Score</b>: Earn points for correct answers.</li><br>
 
           <li><b>Feedback</b>: "Correct!" or "Wrong!" messages will appear.</li><br>
-
-          <li><b>Repeat</b>: Keep solving until you're done.</li><br>
 
          <li> <b>View Score</b>: Your score is displayed in the score box</li><br>
 
