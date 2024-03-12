@@ -4,6 +4,7 @@ var scr=0;
 
 
 $(".strt").click(function() {
+  $("#res").removeAttr("disabled");
   $(".pop").slideUp(1000);
   $("#res").focus();
   $("#res").val(null);
@@ -64,7 +65,8 @@ function game(uopr) {
       $("#res").val(null);
       game(uopr);
       $("#res").focus();
-      $("#res").attr("placeholder", "Your answer is displayed here");
+      $("#res").attr("placeholder", "Type your answer here.");
+      $(".scr").text("Your score is "+scr);
       sessionStorage.setItem("sco",scr);
       return scr;
     }
